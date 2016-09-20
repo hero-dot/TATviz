@@ -1,6 +1,10 @@
+#install.packages("dplyr")
 library("dplyr")
+#install.packages("lubridate")
 library("lubridate")
+#install.packages("fields")
 library("fields")
+#install.packages("magrittr")
 library("magrittr")
 #import data
 test.data <- read.csv("test_data.csv")
