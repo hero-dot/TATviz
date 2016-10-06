@@ -8,6 +8,8 @@ library(RSQLite)
 test.data <- read.csv("test_data.csv")
 con <- dbConnect(RSQLite::SQLite(), ":memory:")
 
+dbConnect(SQLite(), dbname=test.db)
+
 dbWriteTable(con, "test_data", test.data)
 
 # query
