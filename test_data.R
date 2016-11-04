@@ -35,3 +35,16 @@ timeDates <- data.frame(ord,res)
 
 # Create a .csv file containing dates and times for TAT
 write.csv(timeDates,file = "test_data.csv")
+
+#Algorithm 2
+start <- as.POSIXct("2012-01-01")
+interval <- 60
+end <- start + as.difftime(365, units = "days")
+
+daysInYear <- as.data.frame(seq(from = start, by = interval*60*24, to = end))
+colnames(daysInYear)<- c("Day")
+test_1 <- mutate(daysInYear,dow = wday(Day,label = T))
+
+for(level in levels(test_1$dow))
+{test_1[test_1$dow==level,]}
+
